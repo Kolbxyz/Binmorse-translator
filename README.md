@@ -9,4 +9,6 @@ If you want to install this program on your calculator (why  would you?), you mu
 plug your calculator in your computer and drop the python file in it and, here you go! You're all done! Once you finished the installation, click on (on your calculator) "prgm", "Python app" then select the file!
 
 ### Images
+![image](https://user-images.githubusercontent.com/105014128/194714663-7e3d7f85-c2d0-4846-8f6a-635e580a1126.png)
+
 ![image](https://user-images.githubusercontent.com/105014128/194714439-92047a3a-c19e-4847-875f-cda7b739ec88.png)
