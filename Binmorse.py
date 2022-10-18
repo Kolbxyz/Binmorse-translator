@@ -9,7 +9,7 @@ def FromMorseToAlpha():
     for c in range(0, len(str.split(ToTranslate, " "))):
         TranslatedCode += MorseData [str.split(ToTranslate, " ")[c]]
         if Debug: print(TranslatedCode, c)
-    print("Binary to morse -->" + "\n(" + ToTranslate + ")\n" + TranslatedCode + "\n")
+    print("Morse to alphabetic -->" + "\n(" + ToTranslate + ")\n" + TranslatedCode + "\n")
 
 def FromAlphaToMorse():
      TranslatedCode = ""
@@ -51,7 +51,7 @@ while True:
     elif Mode == 2:
         FromAlphaToMorse()
     elif Mode == 3:
-        From BinaryToAlpha()
+        FromBinaryToAlpha()
     elif Mode == 4:
         FromAlphaToBinary()
     else:
