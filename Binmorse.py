@@ -85,7 +85,7 @@ def fromBaseToAlpha(Input):
     if subMode == "b64": translatedCode = base64.b64decode(Input).decode("ascii")
     if subMode == "b85": translatedCode = base64.b85decode(Input).decode("ascii")
 
-    return "Decoding: \"" + Input + "\" from alphabetic to " + subMode + "..." + "\n\n" + translatedCode + "\n"
+    return "Decoding: \"" + Input + "\" from " + subMode + " to alphabetic..." + "\n\n" + translatedCode + "\n"
 
 
 def fromAlphaToBase(Input):
@@ -98,7 +98,7 @@ def fromAlphaToBase(Input):
     if subMode == "b64": translatedCode = base64.b64encode(Input.encode("ascii")).decode("ascii")
     if subMode == "b85": translatedCode = base64.b85encode(Input.encode("ascii")).decode("ascii")
 
-    return "Encoding: \"" + Input + "\" from " + subMode + " to alphabetic..." + "\n\n" + translatedCode + "\n"
+    return "Encoding: \"" + Input + "\" from alphabetic to " + subMode + "..." + "\n\n" + translatedCode + "\n"
     
 
 
