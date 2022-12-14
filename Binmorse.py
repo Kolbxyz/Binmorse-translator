@@ -4,9 +4,9 @@ import binascii
 import base64
 
 ## Variables
-morseData = json.load(open('morseData.json', "r"))
-binaryData = json.load(open('binaryData.json', "r"))
-modesData = json.load(open('modes.json', "r"))
+morseData = json.load(open('databases/morseData.json', "r"))
+binaryData = json.load(open('databases/binaryData.json', "r"))
+modesData = json.load(open('databases/modes.json', "r"))
 
 debug = False
 
@@ -24,19 +24,19 @@ def fromMorseToAlpha(Input):
     for c in range(0, len(str.split(Input, " "))):
         translatedCode += morseData [str.split(Input, " ")[c]]
         if debug: print(translatedCode, c)
-    return  "Translating: \"" + input + "\" from morse to alphabetic..." + "\n\n" + translatedCode + "\n"
+    return  "Translating: \"" + Input + "\" from morse to alphabetic..." + "\n\n" + translatedCode + "\n"
 
 
 def fromAlphaToMorse(Input):
     Input = str.lower(Input)
     translatedCode = ""
-    for c in range(0, len([*input])):
+    for c in range(0, len([*Input])):
         for key in morseData .keys():
-            if morseData [key] == input[c]:
+            if morseData [key] == Input[c]:
               translatedCode += key + " "
             if debug: print(translatedCode, key)            
     translatedCode = translatedCode[0:len(translatedCode)-1]
-    return "Translating: \"" + input + "\" from alphabetic to morse..." + "\n\n" + translatedCode + "\n"
+    return "Translating: \"" + Input + "\" from alphabetic to morse..." + "\n\n" + translatedCode + "\n"
 
 
 def fromBinaryToAlpha(Input):
@@ -45,34 +45,34 @@ def fromBinaryToAlpha(Input):
     for c in range(0, len(str.split(Input, " "))):
         translatedCode += binaryData [str.split(Input, " ")[c]]
         if debug: print(translatedCode, c)
-    return "Translating: \"" + input + "\" from binary to alphabetic..." + "\n\n" + translatedCode + "\n"
+    return "Translating: \"" + Input + "\" from binary to alphabetic..." + "\n\n" + translatedCode + "\n"
 
 
 def fromAlphaToBinary(Input):
     Input = str.lower(Input)
     translatedCode = ""
-    for c in range(0, len([*input])):
+    for c in range(0, len([*Input])):
         for key in binaryData .keys():
-            if binaryData [key] == input[c]:
+            if binaryData [key] == Input[c]:
                translatedCode += key + " "
                if debug: print(translatedCode, key)
                 
     translatedCode = translatedCode[0:len(translatedCode)-1]
-    return "Translating: \"" + input + "\" from alphabetic to binary..." + "\n\n" + translatedCode + "\n"
+    return "Translating: \"" + Input + "\" from alphabetic to binary..." + "\n\n" + translatedCode + "\n"
 
 
 def fromHexToAlpha(Input):
     translatedCode = str(binascii.unhexlify(Input.encode('utf-8')))
     translatedCode = translatedCode.replace("b'","")
     translatedCode = translatedCode.replace("'","")
-    return "Translating: \"" + input + "\" from hex to alphabetic..." + "\n\n" + translatedCode + "\n"
+    return "Translating: \"" + Input + "\" from hex to alphabetic..." + "\n\n" + translatedCode + "\n"
 
 
 def fromAlphaToHex(Input):
     translatedCode = str(binascii.hexlify(Input.encode('utf-8')))
     translatedCode = translatedCode.replace("b'","")
     translatedCode = translatedCode.replace("'","")
-    return  "Translating: \"" + input + "\" from alphabetic to hex..." + "\n\n" + translatedCode + "\n"
+    return  "Translating: \"" + Input + "\" from alphabetic to hex..." + "\n\n" + translatedCode + "\n"
 
 
 def fromBaseToAlpha(Input):
@@ -110,7 +110,7 @@ while True:
     mode = int(input(displayModesList()+"\n\nSelect mode's number: "))
     print("Selected mode: " + modesData[str(mode)] + " (" + str(mode) + ")")
     toTranslate = str(input("\nString to translate: "))
-
+    result = ""
     if mode == 1:
         result = fromMorseToAlpha(toTranslate)
     elif mode == 2:
