@@ -1,3 +1,8 @@
+```
+This script is made by @Kolbxyz (https://github.com/Kolbxyz/)
+Please do not remove these credits if you use this project in any way.
+```
+
 # Morse and binary translator
 
 This is a python program that can translate (almost) anything from morse to alphanumeric, alphanumeric to morse, binary to alphanumeric and alphanumeric to binary.
